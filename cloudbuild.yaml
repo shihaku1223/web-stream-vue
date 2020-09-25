@@ -1,0 +1,19 @@
+steps:
+# Install dependencies
+- name: node:12
+  entrypoint: npm
+  args: ['install']
+# Run build commands
+- name: node:12
+  entrypoint: npm
+  args: ['run', 'build']
+
+# Build the Docker image
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/web-stream-290613/vue-template', '.']
+
+# Push the container image to Container Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/web-stream-290613/vue-template']
+
+images: ['gcr.io/web-stream-290613/vue-template']
