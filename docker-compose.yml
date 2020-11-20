@@ -12,3 +12,9 @@ services:
     restart: always
     volumes:
       - /etc/localtime:/etc/localtime:ro
+
+  app:
+    image: web-stream-app
+    build: ./app
+    ports:
+      - "8000:8000"

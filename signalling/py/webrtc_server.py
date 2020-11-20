@@ -146,6 +146,8 @@ class WebRTCServer:
         self.sessions[client.client_id] = session
         self.sessions[target_client.client_id] = session
 
+        print('SESSION OK')
+
         await client.websocket.send('SESSION_OK')
 
     def get_client(self, uuid):
