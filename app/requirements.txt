@@ -2,3 +2,6 @@ django
 django-cors-headers
 django-rest-framework
 djangorestframework-simplejwt
+channels
+zope.interface
+channels_redis
