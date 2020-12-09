@@ -8,6 +8,7 @@ import HomePage from '@/components/HomePage'
 import { authGuard } from '../auth/authGuard'
 
 import Login from '@/pages/Login'
+import ChatMainPage from '@/pages/ChatMainPage'
 
 let createRouter = () => {
   const routes = [
@@ -16,6 +17,12 @@ let createRouter = () => {
       name: 'home',
       component: HomePage,
       meta: { requiresAuth: true },
+    },
+    {
+      path: '/chat',
+      name: 'chat',
+      component: ChatMainPage,
+      meta: { requiresAuth: false },
     },
     {
       path: '/login',
